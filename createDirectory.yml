@@ -1,0 +1,23 @@
+---
+# createDirectory.yml
+# Autor: Humberto Gamez (hgamez@51mc.mx)
+# Fecha: 21 Nov 2020
+# 
+# Crea un directorio y le asigna permisos a un usuario
+- name: create directory
+  hosts: laboratorio
+  remote_user: 51ans
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+        - name: add a directory
+          # Especifica atributos del directorio
+          # Usamos usuario 51ans como ejemplo
+          file:
+             owner: 51ans
+             group: 51ans
+             mode: 0755
+             recurse: yes
+             path:  /var/51mc_temporal
+             state: directory
