@@ -5,8 +5,8 @@
 # 
 # Crea un directorio y le asigna permisos a un usuario
 - name: create directory
-#  hosts: Laboratorio
-#  remote_user: 51ans
+  hosts: Laboratorio
+  remote_user: 51ans
   become: true
   become_method: sudo
   become_user: root
