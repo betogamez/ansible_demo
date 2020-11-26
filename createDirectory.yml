@@ -19,6 +19,6 @@
              group: 51ans
              mode: 0755
              recurse: yes
-             # path:  /var/51mc_temporal
-             path: '{{ DIRECTORIO }}'
+             path:  /var/51mc_temporal
+             # path: '{{ DIRECTORIO }}'
              state: directory
