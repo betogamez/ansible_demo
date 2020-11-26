@@ -1,0 +1,32 @@
+---
+# configSysctl.yml
+# Autor: Humberto Gamez (hgamez@51mc.mx)
+# Fecha: 21 Nov 2020
+#
+# Modifica el archivo /etc/sysctl.conf
+# 
+# Especificando los siguientes valores:
+#
+# vm.swappiness = 1
+# vm.dirty_background_ratio = 5
+# vm.dirty_ratio = 80
+#
+- name: Configura sysctl.conf 
+  hosts: laboratorio
+  remote_user: 51ans
+  become: true
+  become_method: sudo
+  become_user: root
+ 
+  tasks:
+    - name: Configura sysctl
+      sysctl:
+        name: "{{ item.name }}" 
+        value: "{{ item.value }}"       
+        state: present
+        reload: yes
+        sysctl_set: yes
+      with_items:
+         - { name: vm.swappiness, value: 1 }
+         - { name: vm.dirty_background_ratio, value: 5 }
+         - { name: vm.dirty_ratio, value: 80 }
