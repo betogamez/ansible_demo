@@ -12,8 +12,8 @@
 # vm.dirty_ratio = 80
 #
 - name: Configura sysctl.conf 
-  hosts: Laboratorio
-  remote_user: 51ans
+#  hosts: Laboratorio
+#  remote_user: 51ans
   become: true
   become_method: sudo
   become_user: root
