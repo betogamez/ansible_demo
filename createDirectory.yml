@@ -20,5 +20,5 @@
              mode: 0755
              recurse: yes
              # path:  /var/51mc_temporal2
-             path: '{{ DIRECTORIO }}'
+             # path: '{{ DIRECTORIO }}'
              state: directory
